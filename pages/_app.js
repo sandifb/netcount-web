@@ -1,7 +1,23 @@
-import '../styles/globals.css'
+import React from 'react';
+import Head from 'next/head';
+import theme from '../src/config/theme';
+import { ThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { SnackbarProvider } from 'notistack';
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return <React.Fragment>
+    <Head>
+      <title>{process.env.appName}</title>
+      <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+    </Head>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <SnackbarProvider maxSnack={5} autoHideDuration={5000}>
+        <Component {...pageProps}/>
+      </SnackbarProvider>
+    </ThemeProvider>
+  </React.Fragment>
 }
 
 export default MyApp

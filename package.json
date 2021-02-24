@@ -1,15 +1,28 @@
 {
-  "name": "netc-web",
+  "name": "netcount-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export",
+    "start:dev": "env-cmd --verbose -e development, next dev -p 8030",
+    "start:staging": "env-cmd --verbose -e test, next build && npm run export",
+    "start:production": "env-cmd --verbose -e prod, next build && npm run export"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "axios": "^0.21.1",
+    "clsx": "^1.1.1",
+    "crypto-js": "^4.0.0",
+    "env-cmd": "^10.1.0",
     "next": "10.0.7",
+    "notistack": "^1.0.3",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-google-charts": "^3.0.15"
   }
 }

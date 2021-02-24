@@ -1,0 +1,5 @@
+[context.production]
+  command = "env-cmd --verbose -e prod, next build && npm run export"
+
+[context.branch-deploy]
+  command = "env-cmd --verbose -e test, next build && npm run export"
