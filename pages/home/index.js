@@ -45,7 +45,7 @@ export default function Content() {
 
         <main className={classes.main}>
 
-            <Hidden smUp>
+           
                 <div>
                     <CardHeader
                         avatar={<Avatar aria-label="recipe" className={classes.avatar}> R </Avatar>}
@@ -73,9 +73,7 @@ export default function Content() {
                         </React.Fragment>
                     ))}
 
-
                 </div>
-            </Hidden>
 
 
             <TabPanel value={tab} index={0}>

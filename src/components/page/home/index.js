@@ -15,21 +15,7 @@ export default function Index() {
     return (<main>
 
         <Grid container direction="row" spacing={2}>
-            <Hidden smDown>
-                <Grid item xs={12} sm={12} md={3} lg={3}>
-                    <CardHeader
-                        avatar={<Avatar aria-label="recipe" className={classes.avatar}> R </Avatar>}
-                        action={
-                            <IconButton aria-label="settings">
-                                <MoreVertIcon />
-                            </IconButton>
-                        }
-                        title="Sandi Fadilah"
-                        subheader="September 14, 2016"
-                    />
-                </Grid>
-            </Hidden>
-
+            
             <Grid item xs={12} sm={12} md={3} lg={3}>
                 <Paper className={classes.paper}>
                     <AppBar className={classes.searchBar} position="static" color="default" elevation={0}>

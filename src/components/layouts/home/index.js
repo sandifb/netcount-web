@@ -8,6 +8,7 @@ import Link from '@material-ui/core/Link';
 import Navigator from './Navigator';
 import Header from './Header';
 import theme from '../../../config/theme';
+import { Container } from '@material-ui/core';
 
 function Copyright() {
     return (
@@ -58,7 +59,7 @@ function Paperbase(props) {
         <ThemeProvider theme={theme}>
             <div className={classes.root}>
                 <CssBaseline />
-                <nav className={classes.drawer}>
+                {/* <nav className={classes.drawer}>
                     <Hidden smUp implementation="js">
                         <Navigator
                             PaperProps={{ style: { width: drawerWidth } }}
@@ -70,14 +71,14 @@ function Paperbase(props) {
                     <Hidden xsDown implementation="css">
                         <Navigator PaperProps={{ style: { width: drawerWidth } }} />
                     </Hidden>
-                </nav>
-                <div className={classes.app}>
+                </nav> */}
+                <Container>
                     <Header title={title} onDrawerToggle={handleDrawerToggle} />
                     {props.children}
                     <footer className={classes.footer}>
                         <Copyright />
                     </footer>
-                </div>
+                </Container>
             </div>
         </ThemeProvider>
     );

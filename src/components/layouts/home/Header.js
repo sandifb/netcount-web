@@ -54,44 +54,42 @@ function Header(props) {
             <AppBar color="primary" position="sticky" elevation={0}>
                 <Toolbar>
                     <Grid container spacing={1} alignItems="center">
-                        <Hidden smUp>
-                            <Grid item>
-                                {router.pathname === '/home' ?
-                                    <IconButton
-                                        color="inherit"
-                                        aria-label="open drawer"
-                                        onClick={onDrawerToggle}
-                                        className={classes.menuButton}
-                                    >
-                                        <HomeIcon />
-                                    </IconButton>
-                                    :
-                                    <IconButton
-                                        color="inherit"
-                                        aria-label="open drawer"
-                                        component={Link}
-                                        href="/home"
-                                        className={classes.menuButton}
-                                    >
-                                        <ArrowBackIcon />
-                                    </IconButton>
-                                }
-                            </Grid>
-                        </Hidden>
-
-                        <Hidden smDown>
-                            <Grid item xs />
-                        </Hidden>
-
-                        <Hidden smUp>
-                            <Grid item xs>
-                                <Typography color="inherit" component="h2"> {title ? title : 'NetCount'}  </Typography>
-                            </Grid>
-                        </Hidden>
-
                         <Grid item>
-                            <Link className={classes.link} href="#" variant="body2"> Go to docs </Link>
+                            {router.pathname === '/' ?
+                                <IconButton
+                                    color="inherit"
+                                    aria-label="open drawer"
+                                    onClick={onDrawerToggle}
+                                    className={classes.menuButton}
+                                >
+                                    <HomeIcon />
+                                </IconButton>
+                                :
+                                <IconButton
+                                    color="inherit"
+                                    aria-label="open drawer"
+                                    component={Link}
+                                    href="/"
+                                    className={classes.menuButton}
+                                >
+                                    <ArrowBackIcon />
+                                </IconButton>
+                            }
                         </Grid>
+
+                        {/* <Hidden smDown>
+                            <Grid item xs />
+                        </Hidden> */}
+
+
+                        <Grid item xs>
+                            <Typography color="inherit" variant="h5" component="h1"> {title ? title : 'NetCount'}  </Typography>
+                        </Grid>
+
+
+                        {/* <Grid item>
+                            <Link className={classes.link} href="#" variant="body2"> Go to docs </Link>
+                        </Grid> */}
                         <Grid item>
                             <Tooltip title="Alerts • No alerts">
                                 <IconButton color="inherit">
@@ -108,7 +106,7 @@ function Header(props) {
                 </Toolbar>
             </AppBar>
 
-            <Hidden smDown>
+            {/* <Hidden smDown>
                 <AppBar
                     component="div"
                     className={classes.secondaryBar}
@@ -136,7 +134,7 @@ function Header(props) {
                         </Grid>
                     </Toolbar>
                 </AppBar>
-            </Hidden>
+            </Hidden> */}
 
         </React.Fragment>
     );
