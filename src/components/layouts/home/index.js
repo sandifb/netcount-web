@@ -40,6 +40,9 @@ const styles = {
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
+        [theme.breakpoints.down('sm')]: {
+            padding: 0
+        }
     },
     footer: {
         padding: theme.spacing(2),
@@ -59,20 +62,7 @@ function Paperbase(props) {
         <ThemeProvider theme={theme}>
             <div className={classes.root}>
                 <CssBaseline />
-                {/* <nav className={classes.drawer}>
-                    <Hidden smUp implementation="js">
-                        <Navigator
-                            PaperProps={{ style: { width: drawerWidth } }}
-                            variant="temporary"
-                            open={mobileOpen}
-                            onClose={handleDrawerToggle}
-                        />
-                    </Hidden>
-                    <Hidden xsDown implementation="css">
-                        <Navigator PaperProps={{ style: { width: drawerWidth } }} />
-                    </Hidden>
-                </nav> */}
-                <Container>
+                <Container className={classes.app}>
                     <Header title={title} onDrawerToggle={handleDrawerToggle} />
                     {props.children}
                     <footer className={classes.footer}>

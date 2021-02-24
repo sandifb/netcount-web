@@ -30,6 +30,19 @@ export default function Index() {
             </Grid>
 
             <Grid item xs={12} sm={12} md={6} lg={6}>
+                <Paper className={classes.paper}>
+                    <AppBar className={classes.searchBar} position="static" color="default" elevation={0}>
+                        <Toolbar>
+                            <Typography> Kode Partner </Typography>
+                        </Toolbar>
+                    </AppBar>
+                    <div className={classes.contentWrapper}>
+                        <Typography color="textSecondary" align="center"> No users for this project yet </Typography>
+                    </div>
+                </Paper>
+            </Grid>
+
+            <Grid item xs={12} sm={12} md={3} lg={3}>
                 <Grid container direction="row" spacing={1}>
                     {[1, 2, 3, 4].map((i) => (
                         <Grid key={i} item xs={6} md={6}>
@@ -43,6 +56,8 @@ export default function Index() {
                     ))}
                 </Grid>
             </Grid>
+
+           
         </Grid>
 
         <br />

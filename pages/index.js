@@ -28,24 +28,22 @@ export default function Index() {
   };
 
   return (<HomeLayout>
-    <Hidden smDown>
-      <AppBar
-        component="div"
-        className={classes.secondaryBar}
-        color="primary"
-        position="static"
-        elevation={0}
-      >
-        <Tabs value={tab} textColor="inherit" onChange={changeTab} >
-          <Tab textColor="inherit" label="Dasboard" />
-          <Tab textColor="inherit" label="Pengaturan" />
-        </Tabs>
-      </AppBar>
-    </Hidden>
+
+    <AppBar
+      component="div"
+      className={classes.secondaryBar}
+      color="primary"
+      position="static"
+      elevation={0}
+    >
+      <Tabs value={tab} textColor="inherit" onChange={changeTab} >
+        <Tab textColor="inherit" label="Dasboard" />
+        <Tab textColor="inherit" label="Pengaturan" />
+      </Tabs>
+    </AppBar>
 
     <main className={classes.main}>
-
-     
+      <TabPanel value={tab} index={0}>
         <div>
           <CardHeader
             avatar={<Avatar aria-label="recipe" className={classes.avatar}> R </Avatar>}
@@ -62,7 +60,7 @@ export default function Index() {
             <React.Fragment key={id}>
               <Grid direction="row" container spacing={1}>
                 {children.map(({ id: childId, icon, link }) => (
-                  <Grid item key={childId} xs={3}>
+                  <Grid item key={childId} xs={3} md={1} lg={1}>
                     <Box component={Link} href={link}>
                       <Tab label={childId} icon={icon} />
                     </Box>
@@ -74,16 +72,12 @@ export default function Index() {
           ))}
 
         </div>
-
-
-      <TabPanel value={tab} index={0}>
         <PageHome />
       </TabPanel>
       <TabPanel value={tab} index={1}>
         <Typography> Test Form </Typography>
       </TabPanel>
     </main>
-
   </HomeLayout>);
 }
 
@@ -127,11 +121,15 @@ const categories = [
       { id: 'Pemilu', icon: <HowToVoteIcon />, link: '/election' },
       { id: 'Timses', icon: <GroupIcon />, link: '/team' },
       { id: 'Logistik', icon: <BurstModeIcon />, link: '/logistik' },
-      { id: 'Survey', icon: <EqualizerIcon />, link: '/survey' },
       { id: 'Aplikasi', icon: <AppsIcon />, link: '/app' },
       { id: 'Siaran', icon: <SendIcon />, link: '/next/broadcast' },
       { id: 'Store', icon: <StorefrontIcon />, link: '/next/store' },
+      { id: 'Berita', icon: <LabelIcon />, link: '/next/1' },
+      { id: 'Survey', icon: <EqualizerIcon />, link: '/survey' },
       { id: 'Tiket', icon: <LabelIcon />, link: '/next/ticket' },
+      { id: 'Profil', icon: <LabelIcon />, link: '/next/2' },
+      { id: 'Setting', icon: <LabelIcon />, link: '/next/3' },
+      { id: 'Keluar', icon: <LabelIcon />, link: '/next/4' },
     ],
   }
 ];

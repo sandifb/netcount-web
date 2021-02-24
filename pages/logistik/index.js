@@ -21,34 +21,7 @@ import Tabs from '@material-ui/core/Tabs';
 
 export default function Content(props) {
     const classes = useStyles();
-    return (<HomeLayout>
-        <AppBar
-            component="div"
-            className={classes.secondaryBar}
-            color="primary"
-            position="static"
-            elevation={0}
-        >
-            <Toolbar>
-                <Grid container alignItems="center" spacing={1}>
-                    <Grid item xs>
-                        <Typography color="inherit" variant="h5" component="h1"> Logistik </Typography>
-                    </Grid>
-                    <Grid item>
-                        <Button className={classes.button} variant="outlined" color="inherit" size="small">
-                            Web setup
-                        </Button>
-                    </Grid>
-                    <Grid item>
-                        <Tooltip title="Help">
-                            <IconButton color="inherit">
-                                <HelpIcon />
-                            </IconButton>
-                        </Tooltip>
-                    </Grid>
-                </Grid>
-            </Toolbar>
-        </AppBar>
+    return (<HomeLayout title="Logistik">
         <AppBar
             component="div"
             className={classes.secondaryBar}

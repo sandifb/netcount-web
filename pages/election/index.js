@@ -1,5 +1,6 @@
 import { HomeLayout } from 'components'
-import { AppBar, List, ListItem, ListItemText, Divider, Hidden } from '@material-ui/core';
+import { React, PropTypes, Link } from 'libraries'
+import { AppBar, List, ListItem, ListItemText, Divider, CardHeader, Menu, MenuItem, Hidden } from '@material-ui/core';
 import Toolbar from '@material-ui/core/Toolbar';
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from '@material-ui/core/Typography';
@@ -13,13 +14,58 @@ import { withStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import RefreshIcon from '@material-ui/icons/Refresh';
 
-import HelpIcon from '@material-ui/icons/Help';
+import { HelpIcon, MoreVertIcon } from 'icons';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 
 
 export default function Content(props) {
     const classes = useStyles();
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    const menuOptions = [
+        {
+            'id': 'Informasi',
+            'link': '/',
+        },
+        {
+            'id': 'Data DPT',
+            'link': '/',
+        },
+        {
+            'id': 'Data TPS',
+            'link': '/',
+        },
+        {
+            'id': 'Quick Count',
+            'link': '/',
+        },
+        {
+            'id': 'Real Count',
+            'link': '/',
+        },
+        {
+            'id': 'Saksi',
+            'link': '/',
+        },
+        {
+            'id': 'Pengaturan',
+            'link': '/',
+        },
+    ];
+
+
+
     return (<HomeLayout title="Pemilu">
 
         <AppBar
@@ -40,43 +86,56 @@ export default function Content(props) {
         <main className={classes.main}>
 
             <Grid container direction="row" spacing={2}>
-                <Grid item sm={12} md={2} lg={2}>
+                <Grid item xs={12} sm={12} md={2} lg={2}>
+                    <Hidden smUp>
+                        <CardHeader
+                            action={<>
+                                <IconButton aria-label="settings" onClick={handleClick}>
+                                    <MoreVertIcon />
+                                </IconButton>
 
-                    <List component={Paper} aria-label="secondary mailbox folders">
-                        <ListItem button>
-                            <ListItemText primary="Informasi" />
-                        </ListItem>
-                        <Divider variant="light" component="li" />
-                        <ListItem button>
-                            <ListItemText primary="Data DPT" />
-                        </ListItem>
-                        <Divider variant="light" component="li" />
-                        <ListItem button>
-                            <ListItemText primary="Data TPS" />
-                        </ListItem>
-                        <Divider variant="light" component="li" />
-                        <ListItem button>
-                            <ListItemText primary="Quick Count" />
-                        </ListItem>
-                        <Divider variant="light" component="li" />
-                        <ListItem button>
-                            <ListItemText primary="Real Count" />
-                        </ListItem>
-                        <Divider variant="light" component="li" />
-                        <ListItem button>
-                            <ListItemText primary="Saksi" />
-                        </ListItem>
-                        <Divider variant="light" component="li" />
-                        <ListItem button>
-                            <ListItemText primary="Pengaturan" />
-                        </ListItem>
-                    </List>
+                                <Menu
+                                    id="long-menu"
+                                    anchorEl={anchorEl}
+                                    keepMounted
+                                    open={open}
+                                    onClose={handleClose}
+                                    PaperProps={{
+                                        style: {
+                                            maxHeight: 400,
+                                            width: '15ch',
+                                        },
+                                    }}
+                                >
+                                    {menuOptions.map((item, i) => (
+                                        <MenuItem key={i} selected={item.id === 'Informasi'} onClick={handleClose}>
+                                            {item.id}
+                                        </MenuItem>
+                                    ))}
+                                </Menu>
 
-                    <Typography> Saksi Terpenuhi</Typography>
-                    <Typography> 30% (120 Orang)</Typography>
+                            </>}
+                            title="Pilgub "
+                            subheader="Prov. Sumbar 2020"
+                        />
+                    </Hidden>
+
+                    <Hidden smDown>
+                        <List component={Paper} aria-label="secondary mailbox folders">
+                            {menuOptions.map((item, i) => (<div key={i}>
+                                <ListItem button>
+                                    <ListItemText primary={item.id}/>
+                                </ListItem>
+                                <Divider variant="light" component="li" />
+                            </div>))}
+                        </List>
+
+                        <Typography> Saksi Terpenuhi</Typography>
+                        <Typography> 30% (120 Orang)</Typography>
+                    </Hidden>
                 </Grid>
 
-                <Grid item sm={12} md={10} lg={10}>
+                <Grid item xs={12} sm={12} md={10} lg={10}>
                     <Paper className={classes.paper}>
                         <AppBar className={classes.searchBar} position="static" color="default" elevation={0}>
                             <Toolbar>

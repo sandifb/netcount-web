@@ -72,7 +72,7 @@ export default function Content(props) {
                     </Toolbar>
                 </AppBar>
                 <div className={classes.contentWrapper}>
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+                    {[1, 2].map((i) => (
                         <div key={i}>
                             <Typography color="textSecondary" align="center"> No users for this project yet </Typography>
                             <Typography color="textSecondary" align="center"> No users for this project yet </Typography>
