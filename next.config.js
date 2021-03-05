@@ -15,7 +15,8 @@ module.exports = {
 
         GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
         GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
-        NEXTAUTH_URL: 'https://server-test-netc.netcount.id'
+        NEXTAUTH_URL: 'https://server-test-netc.netcount.id',
+        NEXT_PUBLIC_NEXTAUTH_URL: 'https://server-test-netc.netcount.id',
     },
 
     
