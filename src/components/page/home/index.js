@@ -17,7 +17,8 @@ const GoogleChart = dynamic(
 )
 
 
-export default function Index() {
+export default function Index(props) {
+    const { auth } = props;
     const classes = useStyles();
     return (<main>
 
@@ -44,7 +45,7 @@ export default function Index() {
                         </Toolbar>
                     </AppBar>
                     <div className={classes.contentWrapper}>
-                        <Typography color="textSecondary" align="center"> No users for this project yet </Typography>
+                        <Typography color="textSecondary" align="center"> {JSON.stringify(auth)} </Typography>
                     </div>
                 </Paper>
             </Grid>

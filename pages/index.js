@@ -1,5 +1,5 @@
-import { React, PropTypes, Link } from 'libraries'
-import { PageHome } from 'components'
+import { React, PropTypes, Link, useEffect } from 'libraries'
+import { PageHome, LogoutHooks } from 'components'
 
 import { HomeLayout } from 'components'
 import { AppBar, Box, Hidden, CardHeader, Avatar, ListItemIcon } from '@material-ui/core';
@@ -14,14 +14,26 @@ import IconButton from '@material-ui/core/IconButton';
 import HelpIcon from '@material-ui/icons/Help';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
+import Router from 'next/router'
 
 import { EventIcon, PersonIcon, MoreVertIcon, ExitToAppIcon,  NoteIcon, SettingsApplicationsIcon, HowToVoteIcon, GroupIcon, BurstModeIcon, EqualizerIcon, AppsIcon, SendIcon, StorefrontIcon, LabelIcon } from 'icons';
 
 
-export default function Index() {
+export default function Index(props) {
   const classes = useStyles();
 
+  const { auth } = props;
   const [tab, setTab] = React.useState(0);
+
+  // useEffect(() => {
+  //   if (props && !user) {
+  //     Router.push("/auth/login")
+  //   }
+  // });
+
+  
+
+  
 
   const changeTab = (event, newValue) => {
     setTab(newValue);
@@ -74,10 +86,13 @@ export default function Index() {
           ))}
 
         </div>
-        <PageHome />
+        <PageHome auth={auth} />
       </TabPanel>
       <TabPanel value={tab} index={1}>
         <Typography> Test Form </Typography>
+        <Typography> auth  {JSON.stringify(auth)}</Typography>
+        <LogoutHooks/>
+
       </TabPanel>
     </main>
   </HomeLayout>);

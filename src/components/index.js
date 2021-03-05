@@ -9,6 +9,10 @@ import OnProgres from "./commond/OnProgres";
 import TeamNav from "./page/team/nav";
 
 
+import LoginHooks from "./page/auth/LoginHooks";
+import LogoutHooks from "./page/auth/LogoutHooks";
+
+
 // import StudioLayout from "./src/layout/studio";
 // import Landing from "./src/landing";
 // import TitlePage from "./src/common/TitlePage";
@@ -21,6 +25,9 @@ import TeamNav from "./page/team/nav";
 export {
     HomeLayout,
     PageHome,
+
+    LoginHooks,
+    LogoutHooks,
 
     //Commone
     OnProgres,
