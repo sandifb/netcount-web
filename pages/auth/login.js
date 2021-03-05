@@ -17,6 +17,8 @@ export default function Home() {
 
             <h1>NextAuth Test </h1>
 
+            <h6>{process.env.GOOGLE_CLIENT_SECRET}</h6>
+
             {!session && (
                 <>
                     <button onClick={() => signIn()}>Sign In</button>
