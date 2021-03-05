@@ -18,6 +18,7 @@ export default function Home() {
             <h1>NextAuth Test </h1>
 
             <h6>{process.env.GOOGLE_CLIENT_SECRET}</h6>
+            <h6>{process.env.NEXTAUTH_URL} | </h6>
 
             {!session && (
                 <>
