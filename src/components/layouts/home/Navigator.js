@@ -16,6 +16,10 @@ const categories = [
     {
         id: 'Pilkada',
         children: [
+            { id: 'Timses', icon: <GroupIcon />, link: '/team' },
+            { id: 'Logistik', icon: <BurstModeIcon />, link: '/logistik' },
+            { id: 'Survey', icon: <EqualizerIcon />, link: '/survey' },
+            { id: 'Aplikasi', icon: <AppsIcon />, link: '/app' },
             {
                 id: 'Dashboard',
                 icon: <HomeIcon />,
@@ -23,10 +27,6 @@ const categories = [
                 active: true
             },
             { id: 'Pemilu', icon: <HowToVoteIcon />, link: '/election' },
-            { id: 'Timses', icon: <GroupIcon />, link: '/team' },
-            { id: 'Logistik', icon: <BurstModeIcon />, link: '/logistik' },
-            { id: 'Survey', icon: <EqualizerIcon />, link: '/survey' },
-            { id: 'Aplikasi', icon: <AppsIcon />, link: '/app' },
         ],
     },
     {

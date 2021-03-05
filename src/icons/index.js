@@ -74,9 +74,18 @@ import AppsIcon from '@material-ui/icons/Apps';
 import SendIcon from '@material-ui/icons/Send';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import LabelIcon from '@material-ui/icons/Label';
-
-
+import AddIcon from '@material-ui/icons/Add';
+import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+import EventIcon from '@material-ui/icons/Event';
+import NoteIcon from '@material-ui/icons/Note';
+import PersonIcon from '@material-ui/icons/Person';
 export {
+    PersonIcon,
+    NoteIcon,
+    EventIcon,
+    ExpandLessIcon,
+    ExpandMoreIcon,
+    AddIcon,
     LabelIcon,
     StorefrontIcon,
     SendIcon,
@@ -87,7 +96,6 @@ export {
     VerticalAlignTopIcon,
     CloudUploadIcon,
     AddBoxIcon,
-    ExpandMoreIcon,
     SupervisedUserCircleIcon,
     AccountBoxIcon,
     PersonAddIcon,

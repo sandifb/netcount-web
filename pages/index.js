@@ -15,7 +15,7 @@ import HelpIcon from '@material-ui/icons/Help';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 
-import { MoreVertIcon, HomeIcon, HowToVoteIcon, GroupIcon, BurstModeIcon, EqualizerIcon, AppsIcon, SendIcon, StorefrontIcon, LabelIcon } from 'icons';
+import { EventIcon, PersonIcon, MoreVertIcon, ExitToAppIcon,  NoteIcon, SettingsApplicationsIcon, HowToVoteIcon, GroupIcon, BurstModeIcon, EqualizerIcon, AppsIcon, SendIcon, StorefrontIcon, LabelIcon } from 'icons';
 
 
 export default function Index() {
@@ -28,7 +28,6 @@ export default function Index() {
   };
 
   return (<HomeLayout>
-
     <AppBar
       component="div"
       className={classes.secondaryBar}
@@ -45,16 +44,19 @@ export default function Index() {
     <main className={classes.main}>
       <TabPanel value={tab} index={0}>
         <div>
-          <CardHeader
-            avatar={<Avatar aria-label="recipe" className={classes.avatar}> R </Avatar>}
-            action={
-              <IconButton aria-label="settings">
-                <MoreVertIcon />
-              </IconButton>
-            }
-            title="Sandi Fadilah"
-            subheader="September 14, 2016"
-          />
+
+          <Hidden smUp>
+            <CardHeader
+              avatar={<Avatar aria-label="recipe" className={classes.avatar}> R </Avatar>}
+              action={
+                <IconButton aria-label="settings">
+                  <MoreVertIcon />
+                </IconButton>
+              }
+              title="Sandi Fadilah"
+              subheader="September 14, 2016"
+            />
+          </Hidden>
 
           {categories.map(({ id, children }) => (
             <React.Fragment key={id}>
@@ -118,18 +120,18 @@ const categories = [
   {
     id: 'Pilkada',
     children: [
-      { id: 'Pemilu', icon: <HowToVoteIcon />, link: '/election' },
       { id: 'Timses', icon: <GroupIcon />, link: '/team' },
-      { id: 'Logistik', icon: <BurstModeIcon />, link: '/logistik' },
       { id: 'Aplikasi', icon: <AppsIcon />, link: '/app' },
-      { id: 'Siaran', icon: <SendIcon />, link: '/next/broadcast' },
-      { id: 'Store', icon: <StorefrontIcon />, link: '/next/store' },
-      { id: 'Berita', icon: <LabelIcon />, link: '/next/1' },
-      { id: 'Survey', icon: <EqualizerIcon />, link: '/survey' },
-      { id: 'Tiket', icon: <LabelIcon />, link: '/next/ticket' },
-      { id: 'Profil', icon: <LabelIcon />, link: '/next/2' },
-      { id: 'Setting', icon: <LabelIcon />, link: '/next/3' },
-      { id: 'Keluar', icon: <LabelIcon />, link: '/next/4' },
+      { id: 'Agenda', icon: <EventIcon />, link: '/event' },
+      { id: 'Logistik', icon: <BurstModeIcon />, link: '/logistik' },
+      { id: 'Siaran', icon: <SendIcon />, link: '/logistik' },
+      { id: 'Pemilu', icon: <HowToVoteIcon />, link: '/logistik' },
+      { id: 'Store', icon: <StorefrontIcon />, link: '/logistik' },
+      { id: 'Berita', icon: <NoteIcon />, link: '/logistik' },
+      { id: 'Survey', icon: <EqualizerIcon />, link: '/logistik' },
+      { id: 'Profil', icon: <PersonIcon />, link: '/logistik' },
+      { id: 'Setting', icon: <SettingsApplicationsIcon />, link: '/logistik' },
+      { id: 'Keluar', icon: <ExitToAppIcon />, link: '/auth/login' },
     ],
   }
 ];
@@ -172,7 +174,7 @@ const useStyles = makeStyles(theme => ({
     flex: 1,
     background: '#eaeff1',
     [theme.breakpoints.up('sm')]: {
-      padding: theme.spacing(4, 4),
+      padding: theme.spacing(2, 4, 4, 4),
     },
     [theme.breakpoints.down('sm')]: {
       padding: theme.spacing(2, 1.2),

@@ -1,17 +1,13 @@
-import { HomeLayout } from 'components'
-import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import { makeStyles } from "@material-ui/core/styles";
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Tooltip from '@material-ui/core/Tooltip';
-import IconButton from '@material-ui/core/IconButton';
-import { withStyles } from '@material-ui/core/styles';
-import SearchIcon from '@material-ui/icons/Search';
+import { React, PropTypes, Link } from 'libraries'
+import { HomeLayout, TeamNav } from 'components'
+import { makeStyles, withStyles } from "@material-ui/core/styles";
+
+import {
+    AppBar, Hidden, Toolbar, Typography, Paper,
+    Grid, Button, TextField, Tooltip, IconButton,
+} from '@material-ui/core';
+
+import { SearchIcon, AddIcon } from 'icons';
 import RefreshIcon from '@material-ui/icons/Refresh';
 
 import HelpIcon from '@material-ui/icons/Help';
@@ -21,19 +17,14 @@ import Tabs from '@material-ui/core/Tabs';
 
 export default function Content(props) {
     const classes = useStyles();
-    return (<HomeLayout>
-        <AppBar component="div" className={classes.secondaryBar} color="primary" position="static" elevation={0}>
-            <Tabs value={0} textColor="inherit">
-                <Tab textColor="inherit" label="Tema Aplikasi" />
-                <Tab textColor="inherit" label="Operator" />
-                <Tab textColor="inherit" label="Slide" />
-                <Tab textColor="inherit" label="News" />
-            </Tabs>
-        </AppBar>
+    return (<HomeLayout title="Timses">
+
+        <TeamNav />
 
         <main className={classes.main}>
-            <Paper className={classes.paper}>
 
+
+            <Paper className={classes.paper}>
                 <AppBar className={classes.searchBar} position="static" color="default" elevation={0}>
                     <Toolbar>
                         <Grid container spacing={2} alignItems="center">
@@ -42,23 +33,22 @@ export default function Content(props) {
                             </Grid>
                             <Grid item xs>
                                 <TextField
-                                    fullWidth placeholder="Search by email address, phone number, or user UID"
-                                    InputProps={{ disableUnderline: true, className: classes.searchInput}}
+                                    fullWidth
+                                    placeholder="Search by email address, phone number, or user UID"
+                                    InputProps={{
+                                        disableUnderline: true,
+                                        className: classes.searchInput,
+                                    }}
                                 />
                             </Grid>
                             <Grid item>
-                                <Button variant="contained" color="primary" className={classes.btnBar}> Add user </Button>
-                                <Tooltip title="Reload">
-                                    <IconButton>
-                                        <RefreshIcon className={classes.block} color="inherit" />
-                                    </IconButton>
-                                </Tooltip>
+                                <Button variant="contained" color="primary" className={classes.addUser}> Tambah Pendukung </Button>
                             </Grid>
                         </Grid>
                     </Toolbar>
                 </AppBar>
                 <div className={classes.contentWrapper}>
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+                    {[1, 2].map((i) => (
                         <div key={i}>
                             <Typography color="textSecondary" align="center"> No users for this project yet </Typography>
                             <Typography color="textSecondary" align="center"> No users for this project yet </Typography>
@@ -68,18 +58,19 @@ export default function Content(props) {
                     ))}
                 </div>
             </Paper>
+
+
         </main>
     </HomeLayout>);
 }
 
 
-
-
 const useStyles = makeStyles(theme => ({
     paper: {
-        maxWidth: 936,
+        // maxWidth: 936,
         margin: 'auto',
         overflow: 'hidden',
+        marginBottom: 20
     },
     searchBar: {
         borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
@@ -90,7 +81,7 @@ const useStyles = makeStyles(theme => ({
     block: {
         display: 'block',
     },
-    btnBar: {
+    addUser: {
         marginRight: theme.spacing(1),
     },
     contentWrapper: {
@@ -101,8 +92,13 @@ const useStyles = makeStyles(theme => ({
     },
     main: {
         flex: 1,
-        padding: theme.spacing(4, 4),
         background: '#eaeff1',
+        [theme.breakpoints.up('sm')]: {
+            padding: theme.spacing(4, 4),
+        },
+        [theme.breakpoints.down('sm')]: {
+            padding: theme.spacing(2, 1.2),
+        },
     },
 }));
 

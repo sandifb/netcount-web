@@ -9,6 +9,12 @@ let theme = createMuiTheme({
             main: '#009be5',
             dark: '#006db3',
         },
+        secondary: {
+            light: '#0066ff',
+            main: '#0ca4ed',
+            // dark: will be calculated from palette.secondary.main,
+            contrastText: '#ffffff',
+        },
     },
     typography: {
         fontFamily: [

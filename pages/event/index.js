@@ -1,6 +1,5 @@
 import { HomeLayout } from 'components'
-import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
+import { AppBar, Hidden } from '@material-ui/core';
 import Toolbar from '@material-ui/core/Toolbar';
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from '@material-ui/core/Typography';
@@ -19,15 +18,21 @@ import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 
 
-export default function Content(props) {
+export default function Index(props) {
     const classes = useStyles();
-    return (<HomeLayout>
-        <AppBar component="div" className={classes.secondaryBar} color="primary" position="static" elevation={0}>
+    return (<HomeLayout title="Agenda">
+
+        <AppBar
+            component="div"
+            className={classes.secondaryBar}
+            color="primary"
+            position="static"
+            elevation={0}
+        >
             <Tabs value={0} textColor="inherit">
-                <Tab textColor="inherit" label="Tema Aplikasi" />
-                <Tab textColor="inherit" label="Operator" />
-                <Tab textColor="inherit" label="Slide" />
-                <Tab textColor="inherit" label="News" />
+                <Tab textColor="inherit" label="Statistik" />
+                <Tab textColor="inherit" label="Data DPT" />
+                <Tab textColor="inherit" label="Pendukung" />
             </Tabs>
         </AppBar>
 
@@ -42,12 +47,18 @@ export default function Content(props) {
                             </Grid>
                             <Grid item xs>
                                 <TextField
-                                    fullWidth placeholder="Search by email address, phone number, or user UID"
-                                    InputProps={{ disableUnderline: true, className: classes.searchInput}}
+                                    fullWidth
+                                    placeholder="Search by email address, phone number, or user UID"
+                                    InputProps={{
+                                        disableUnderline: true,
+                                        className: classes.searchInput,
+                                    }}
                                 />
                             </Grid>
                             <Grid item>
-                                <Button variant="contained" color="primary" className={classes.btnBar}> Add user </Button>
+                                <Button variant="contained" color="primary" className={classes.addUser}>
+                                    Add user
+              </Button>
                                 <Tooltip title="Reload">
                                     <IconButton>
                                         <RefreshIcon className={classes.block} color="inherit" />
@@ -58,7 +69,7 @@ export default function Content(props) {
                     </Toolbar>
                 </AppBar>
                 <div className={classes.contentWrapper}>
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+                    {[1, 2].map((i) => (
                         <div key={i}>
                             <Typography color="textSecondary" align="center"> No users for this project yet </Typography>
                             <Typography color="textSecondary" align="center"> No users for this project yet </Typography>
@@ -73,11 +84,9 @@ export default function Content(props) {
 }
 
 
-
-
 const useStyles = makeStyles(theme => ({
     paper: {
-        maxWidth: 936,
+        // maxWidth: 936,
         margin: 'auto',
         overflow: 'hidden',
     },
@@ -90,7 +99,7 @@ const useStyles = makeStyles(theme => ({
     block: {
         display: 'block',
     },
-    btnBar: {
+    addUser: {
         marginRight: theme.spacing(1),
     },
     contentWrapper: {
@@ -101,8 +110,13 @@ const useStyles = makeStyles(theme => ({
     },
     main: {
         flex: 1,
-        padding: theme.spacing(4, 4),
         background: '#eaeff1',
+        [theme.breakpoints.up('sm')]: {
+            padding: theme.spacing(4, 4),
+        },
+        [theme.breakpoints.down('sm')]: {
+            padding: theme.spacing(2, 1.2),
+        },
     },
 }));
 

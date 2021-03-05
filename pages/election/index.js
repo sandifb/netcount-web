@@ -124,7 +124,7 @@ export default function Content(props) {
                         <List component={Paper} aria-label="secondary mailbox folders">
                             {menuOptions.map((item, i) => (<div key={i}>
                                 <ListItem button>
-                                    <ListItemText primary={item.id}/>
+                                    <ListItemText primary={item.id} />
                                 </ListItem>
                                 <Divider variant="light" component="li" />
                             </div>))}

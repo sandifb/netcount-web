@@ -7,7 +7,14 @@ import Tooltip from '@material-ui/core/Tooltip';
 import SearchIcon from '@material-ui/icons/Search';
 import RefreshIcon from '@material-ui/icons/Refresh';
 import { makeStyles } from "@material-ui/core/styles";
-import { Chart } from "react-google-charts";
+
+import dynamic from 'next/dynamic'
+
+
+const GoogleChart = dynamic(
+    () => import('react-google-charts'),
+    { loading: () => <p>...</p> }
+)
 
 
 export default function Index() {
@@ -98,7 +105,7 @@ export default function Index() {
                         </Toolbar>
                     </AppBar>
                     <div>
-                        <Chart
+                        <GoogleChart
                             width={'100%'}
                             height={'400px'}
                             chartType="LineChart"

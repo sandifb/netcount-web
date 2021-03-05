@@ -12,6 +12,9 @@ module.exports = {
         appHost: process.env.APP_HOST,
         appKey: process.env.APP_KEY,
         testName: process.env.TEST_NAME,
+
+        GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+        GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     },
 
     

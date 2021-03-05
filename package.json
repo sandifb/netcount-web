@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "start:dev": "env-cmd --verbose -e development, next dev -p 8030",
+    "start:dev": "env-cmd --verbose -e development, next dev -p 3000",
     "start:staging": "env-cmd --verbose -e test, next build && npm run export",
     "start:production": "env-cmd --verbose -e prod, next build && npm run export"
   },
@@ -20,6 +20,7 @@
     "crypto-js": "^4.0.0",
     "env-cmd": "^10.1.0",
     "next": "10.0.7",
+    "next-auth": "^3.7.0",
     "notistack": "^1.0.3",
     "react": "17.0.1",
     "react-dom": "17.0.1",

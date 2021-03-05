@@ -2,6 +2,13 @@ import HomeLayout from "./layouts/home";
 
 import PageHome from "./page/home";
 
+ //Commone
+import OnProgres from "./commond/OnProgres";
+
+//Nav
+import TeamNav from "./page/team/nav";
+
+
 // import StudioLayout from "./src/layout/studio";
 // import Landing from "./src/landing";
 // import TitlePage from "./src/common/TitlePage";
@@ -13,7 +20,11 @@ import PageHome from "./page/home";
 
 export {
     HomeLayout,
-    PageHome
+    PageHome,
+
+    //Commone
+    OnProgres,
+    TeamNav
     
     // HomeLayout, StudioLayout,
     // GoogleLogin, GoogleLogout,
