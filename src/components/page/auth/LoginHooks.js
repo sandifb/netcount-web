@@ -12,7 +12,7 @@ function LoginHooks() {
 
     const { setAuthTokens } = useAuth();
     const onSuccess = (res) => {
-        
+
         console.log('Login Success: currentUser:', res.profileObj);
 
         const auth = {
@@ -46,7 +46,7 @@ function LoginHooks() {
     });
 
     return (
-        <button onClick={signIn} className="button">
+        <button onClick={() => signIn()} className="button">
             <img src="https://cdn.icon-icons.com/icons2/2119/PNG/512/google_icon_131222.png" style={{ width: 30 }} alt="google login" className="icon"></img>
             <span className="buttonText">Sign in with Google</span>
         </button>
