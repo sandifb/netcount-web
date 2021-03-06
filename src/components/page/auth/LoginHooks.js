@@ -15,14 +15,14 @@ function LoginHooks() {
         
         console.log('Login Success: currentUser:', res.profileObj);
 
-        const user = {
+        const auth = {
             googleId: res.profileObj.googleId,
             imageUrl: res.profileObj.imageUrl,
             email: res.profileObj.email,
             name: res.profileObj.name
         };
 
-        setAuthTokens(user);
+        setAuthTokens(auth);
 
         if (res.profileObj.googleId) {
             Router.push("/auth/check")

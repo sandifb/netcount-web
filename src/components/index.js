@@ -5,6 +5,8 @@ import PageHome from "./page/home";
  //Commone
 import OnProgres from "./commond/OnProgres";
 
+import Welcome from "./welcome";
+
 //Nav
 import TeamNav from "./page/team/nav";
 
@@ -25,13 +27,14 @@ import LogoutHooks from "./page/auth/LogoutHooks";
 export {
     HomeLayout,
     PageHome,
+    Welcome,
 
     LoginHooks,
     LogoutHooks,
 
     //Commone
     OnProgres,
-    TeamNav
+    TeamNav,
     
     // HomeLayout, StudioLayout,
     // GoogleLogin, GoogleLogout,

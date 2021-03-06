@@ -15,7 +15,7 @@ module.exports = {
 
         GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
         GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
-        NEXTAUTH_URL: 'https://netcount-web-8t2xlwh9k-sandifb.vercel.app',
+        NEXTAUTH_URL: 'https://netcount-web-8t2xlwh9k-sandifb.vercel.app'
     },
 
     

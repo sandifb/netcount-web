@@ -9,22 +9,19 @@ export default function Check(props) {
     const { setAuthTokens } = useAuth();
 
     useEffect(() => {
-        if (!props.user) {
+
+        if (!props.auth) {
             Router.push("/login")
         }
 
         let hostenv = localStorage.getItem('next.hostenv');
-        
+        // console.log("hostenv" + JSON.stringify(hostenv));
+
         if (hostenv) {
             let next = Dnc(hostenv);
-            let user = JSON.stringify(next.user);
+            let user = JSON.stringify(next.auth);
             if (user) {
                 Router.push('/')
-
-                //TODO only test
-                // setAuthTokens(user)
-                //TODO only test
-
             }
             Router.push('/');
         }else{
@@ -36,21 +33,20 @@ export default function Check(props) {
 
 
     const handleSubmit = async () => {
-        
-
-
+    
         // TODO
-        // Sementara
+        // // Sementara
         const res_data = {
             access_token: "XEEE",
             user:{
-                googleId: props.user.googleId,
-                imageUrl: props.user.imageUrl,
-                email: props.user.email,
-                name: props.user.name
+                googleId: props.auth.googleId,
+                imageUrl: props.auth.imageUrl,
+                email: props.auth.email,
+                name: props.auth.name
             }
         };
 
+        setAuthTokens(res_data.user);
         localStorage.setItem('next.hostenv', Enc(res_data));
         Router.push("/")
 
