@@ -13,7 +13,8 @@ function LoginHooks() {
     const { setAuthTokens } = useAuth();
     const onSuccess = (res) => {
 
-        console.log('Login Success: currentUser:', res.profileObj);
+        // console.log('Login Success: RES:', JSON.stringify(res));
+        // console.log('Login Success: currentUser:', res.profileObj);
 
         const auth = {
             googleId: res.profileObj.googleId,

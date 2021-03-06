@@ -5,7 +5,8 @@ const isProd = process.env.NODE_ENV === "production";
 module.exports = withPWA({
     future: { webpack5: true },
     pwa: {
-        disable: !isProd,
+        // disable: !isProd,
+        disable: true,
         dest: "public"
     },
     target: "serverless",

@@ -50,8 +50,8 @@ export default function Index(props) {
                         <Grid key={i} item xs={6} md={6}>
                             <Paper className={classes.paper}>
                                 <CardHeader
-                                    title="120"
-                                    subheader="Relawan"
+                                    title={120 + i}
+                                    subheader={`Relawan ${i}`}
                                 />
                             </Paper>
                         </Grid>

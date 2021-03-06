@@ -9,7 +9,10 @@ import IconButton from '@material-ui/core/IconButton';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 
-import { EventIcon, MoreVertIcon, ExitToAppIcon, GroupIcon, AppsIcon } from 'icons';
+import {
+  EventIcon, MoreVertIcon, ExitToAppIcon, GroupIcon, AppsIcon,
+  BurstModeIcon, SendIcon, HowToVoteIcon, StorefrontIcon, NoteIcon, EqualizerIcon, SettingsApplicationsIcon, PersonIcon
+} from 'icons';
 
 
 export default function Index(props) {
@@ -56,7 +59,7 @@ export default function Index(props) {
             />
           </Hidden>
 
-            
+
           {categories.map(({ id, children }) => (
             <React.Fragment key={id}>
               <Grid direction="row" container spacing={1}>
@@ -126,14 +129,14 @@ const categories = [
       { id: 'Timses', icon: <GroupIcon />, link: '/team' },
       { id: 'Aplikasi', icon: <AppsIcon />, link: '/app' },
       { id: 'Agenda', icon: <EventIcon />, link: '/event' },
-      // { id: 'Logistik', icon: <BurstModeIcon />, link: '/logistik' },
-      // { id: 'Siaran', icon: <SendIcon />, link: '/logistik' },
-      // { id: 'Pemilu', icon: <HowToVoteIcon />, link: '/logistik' },
-      // { id: 'Store', icon: <StorefrontIcon />, link: '/logistik' },
-      // { id: 'Berita', icon: <NoteIcon />, link: '/logistik' },
-      // { id: 'Survey', icon: <EqualizerIcon />, link: '/logistik' },
-      // { id: 'Profil', icon: <PersonIcon />, link: '/logistik' },
-      // { id: 'Setting', icon: <SettingsApplicationsIcon />, link: '/logistik' },
+      { id: 'Logistik', icon: <BurstModeIcon />, link: '/logistik' },
+      { id: 'Siaran', icon: <SendIcon />, link: '/logistik' },
+      { id: 'Pemilu', icon: <HowToVoteIcon />, link: '/logistik' },
+      { id: 'Store', icon: <StorefrontIcon />, link: '/logistik' },
+      { id: 'Berita', icon: <NoteIcon />, link: '/logistik' },
+      { id: 'Survey', icon: <EqualizerIcon />, link: '/logistik' },
+      { id: 'Profil', icon: <PersonIcon />, link: '/logistik' },
+      { id: 'Setting', icon: <SettingsApplicationsIcon />, link: '/logistik' },
       { id: 'Keluar', icon: <ExitToAppIcon />, link: '/auth/login' },
     ],
   }
