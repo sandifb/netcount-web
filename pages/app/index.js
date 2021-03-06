@@ -1,3 +1,4 @@
+import { Private } from 'libraries'
 import { HomeLayout } from 'components'
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
@@ -18,8 +19,8 @@ import HelpIcon from '@material-ui/icons/Help';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 
-
-export default function Content(props) {
+export default Private(Index);
+function Index(props) {
     const classes = useStyles();
     return (<HomeLayout>
         <AppBar component="div" className={classes.secondaryBar} color="primary" position="static" elevation={0}>

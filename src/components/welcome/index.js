@@ -1,11 +1,25 @@
+import { Link, useEffect, useState } from 'libraries'
+import { LoginHooks, Loading } from 'components'
 import { makeStyles } from "@material-ui/core/styles"
-import { Link } from 'libraries'
-import { LoginHooks } from 'components'
 import { Button } from '@material-ui/core'
 
 
 export default function Welcome() {
     const classes = useStyles();
+    const [up, setUp] = useState(true);
+
+    useEffect(() => {
+        const timeoutID = window.setTimeout(() => {
+            setUp(false)
+        }, 2000);
+        return () => window.clearTimeout(timeoutID);
+    }, []);
+
+
+    if (up) {
+        return <Loading />
+    }
+
     return (
         <main className={classes.main}>
             <h1>Auth Login </h1>

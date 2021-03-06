@@ -1,22 +1,15 @@
-import { React, PropTypes, Link, useEffect } from 'libraries'
-import { PageHome, LogoutHooks } from 'components'
-
-import { HomeLayout, Welcome } from 'components'
-import { AppBar, Box, Hidden, CardHeader, Avatar, ListItemIcon } from '@material-ui/core';
-import Toolbar from '@material-ui/core/Toolbar';
+import { React, PropTypes, Link } from 'libraries'
+import { PageHome, LogoutHooks, HomeLayout, Welcome } from 'components'
+import { AppBar, Box, Hidden, CardHeader, Avatar } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import Tooltip from '@material-ui/core/Tooltip';
 import IconButton from '@material-ui/core/IconButton';
 
-import HelpIcon from '@material-ui/icons/Help';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
-import Router from 'next/router'
 
-import { EventIcon, PersonIcon, MoreVertIcon, ExitToAppIcon, NoteIcon, SettingsApplicationsIcon, HowToVoteIcon, GroupIcon, BurstModeIcon, EqualizerIcon, AppsIcon, SendIcon, StorefrontIcon, LabelIcon } from 'icons';
+import { EventIcon, MoreVertIcon, ExitToAppIcon, GroupIcon, AppsIcon } from 'icons';
 
 
 export default function Index(props) {
@@ -63,6 +56,7 @@ export default function Index(props) {
             />
           </Hidden>
 
+            
           {categories.map(({ id, children }) => (
             <React.Fragment key={id}>
               <Grid direction="row" container spacing={1}>
@@ -84,6 +78,7 @@ export default function Index(props) {
       <TabPanel value={tab} index={1}>
         <Typography> Test Form </Typography>
         <Typography> auth  {JSON.stringify(auth)}</Typography>
+        <Typography> auth  {JSON.stringify(process.env.NODE_ENV)}</Typography>
         <LogoutHooks />
 
       </TabPanel>
@@ -131,14 +126,14 @@ const categories = [
       { id: 'Timses', icon: <GroupIcon />, link: '/team' },
       { id: 'Aplikasi', icon: <AppsIcon />, link: '/app' },
       { id: 'Agenda', icon: <EventIcon />, link: '/event' },
-      { id: 'Logistik', icon: <BurstModeIcon />, link: '/logistik' },
-      { id: 'Siaran', icon: <SendIcon />, link: '/logistik' },
-      { id: 'Pemilu', icon: <HowToVoteIcon />, link: '/logistik' },
-      { id: 'Store', icon: <StorefrontIcon />, link: '/logistik' },
-      { id: 'Berita', icon: <NoteIcon />, link: '/logistik' },
-      { id: 'Survey', icon: <EqualizerIcon />, link: '/logistik' },
-      { id: 'Profil', icon: <PersonIcon />, link: '/logistik' },
-      { id: 'Setting', icon: <SettingsApplicationsIcon />, link: '/logistik' },
+      // { id: 'Logistik', icon: <BurstModeIcon />, link: '/logistik' },
+      // { id: 'Siaran', icon: <SendIcon />, link: '/logistik' },
+      // { id: 'Pemilu', icon: <HowToVoteIcon />, link: '/logistik' },
+      // { id: 'Store', icon: <StorefrontIcon />, link: '/logistik' },
+      // { id: 'Berita', icon: <NoteIcon />, link: '/logistik' },
+      // { id: 'Survey', icon: <EqualizerIcon />, link: '/logistik' },
+      // { id: 'Profil', icon: <PersonIcon />, link: '/logistik' },
+      // { id: 'Setting', icon: <SettingsApplicationsIcon />, link: '/logistik' },
       { id: 'Keluar', icon: <ExitToAppIcon />, link: '/auth/login' },
     ],
   }
@@ -148,7 +143,6 @@ const categories = [
 
 const useStyles = makeStyles(theme => ({
   paper: {
-    // maxWidth: 936,
     margin: 'auto',
     overflow: 'hidden',
   },

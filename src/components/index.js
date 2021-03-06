@@ -4,6 +4,7 @@ import PageHome from "./page/home";
 
  //Commone
 import OnProgres from "./commond/OnProgres";
+import Loading from "./commond/Loading";
 
 import Welcome from "./welcome";
 
@@ -34,6 +35,7 @@ export {
 
     //Commone
     OnProgres,
+    Loading,
     TeamNav,
     
     // HomeLayout, StudioLayout,

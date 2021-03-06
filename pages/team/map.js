@@ -1,4 +1,4 @@
-import { React, PropTypes, Link } from 'libraries'
+import { React, PropTypes, Link, Private } from 'libraries'
 import { HomeLayout, TeamNav } from 'components'
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 
@@ -14,8 +14,8 @@ import HelpIcon from '@material-ui/icons/Help';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 
-
-export default function Content(props) {
+export default Private(Map);
+function Map(props) {
     const classes = useStyles();
     return (<HomeLayout title="Timses">
 

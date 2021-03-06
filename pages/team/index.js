@@ -1,4 +1,4 @@
-import { React, Link } from 'libraries'
+import { React, Link, Private } from 'libraries'
 import { HomeLayout, TeamNav } from 'components'
 import { makeStyles } from "@material-ui/core/styles";
 // import { Chart } from "react-google-charts";
@@ -19,8 +19,9 @@ const GoogleChart = dynamic(
     { loading: () => <p>...</p> }
 )
 
+export default Private(Index);
 
-export default function Content() {
+function Index() {
     const classes = useStyles();
     return (<HomeLayout title="Timses">
 

@@ -1,4 +1,4 @@
-import { React, useState, PropTypes, Link } from 'libraries'
+import { React, useState, PropTypes, Link, Private } from 'libraries'
 import { HomeLayout, TeamNav } from 'components'
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 
@@ -16,8 +16,8 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
-
-export default function Content(props) {
+export default Private(List);
+function List(props) {
     const classes = useStyles();
     const [filter, setFilter] = useState(false);
 

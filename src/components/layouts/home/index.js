@@ -1,11 +1,10 @@
-import React from 'react';
+import { React, useState } from 'libraries';
 import PropTypes from 'prop-types';
 import { ThemeProvider, withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-import Navigator from './Navigator';
+
 import Header from './Header';
 import theme from '../../../config/theme';
 import { Container } from '@material-ui/core';
@@ -50,9 +49,9 @@ const styles = {
     },
 };
 
-function Paperbase(props) {
+function Index(props) {
     const { classes, title } = props;
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -74,8 +73,8 @@ function Paperbase(props) {
     );
 }
 
-Paperbase.propTypes = {
+Index.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Paperbase);
+export default withStyles(styles)(Index);

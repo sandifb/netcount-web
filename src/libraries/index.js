@@ -8,7 +8,7 @@ import CryptoJS from "crypto-js";
 
 // import PrivatRoute from './src/PrivateRoute';
 // import withAuth from './src/withAuth';
-// import Private from './src/Private';
+import Private from './src/Private';
 import { useSnackbar } from 'notistack';
 
 
@@ -18,7 +18,8 @@ export {
     ReactDOM, PropTypes,
     Link, makeStyles,
     Enc, Dnc, HostEnv,
-    useSnackbar
+    useSnackbar,
+    Private
 };
 
 

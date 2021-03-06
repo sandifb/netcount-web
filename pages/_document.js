@@ -16,6 +16,8 @@ export default class MyDocument extends Document {
             <Html lang="en">
                 <Head>
                     <meta name="theme-color" content={theme.palette.primary.main} />
+                    <link rel="manifest" href="/manifest.json" />
+                    <link rel="icon" href="/images/pwa-192.png" />
                     <link
                         rel="stylesheet"
                         href="https://fonts.googleapis.com/css?family=Montserrat:wght@300,400,500,700&display=swap"

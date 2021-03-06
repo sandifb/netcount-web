@@ -1,4 +1,5 @@
 import { useState, useEffect, React, Dnc } from 'libraries';
+import { Welcome } from 'components'
 import Head from 'next/head';
 import theme from '../src/config/theme';
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -23,6 +24,7 @@ function MyApp({ Component, pageProps }) {
     }
 
     let hostenv = localStorage.getItem('next.hostenv');
+
     if (hostenv) {
       let next = Dnc(hostenv);
       // console.log("NEXT" + JSON.stringify(next.user));
@@ -44,7 +46,7 @@ function MyApp({ Component, pageProps }) {
       <CssBaseline />
       <SnackbarProvider maxSnack={5} autoHideDuration={5000}>
         <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
-          <Component {...pageProps} auth={authTokens}/>
+          <Component {...pageProps} auth={authTokens} />
         </AuthContext.Provider>
       </SnackbarProvider>
     </ThemeProvider>

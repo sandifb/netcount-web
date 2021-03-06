@@ -1,13 +1,13 @@
-import { Login } from 'components';
+import { Welcome } from 'components';
 
 const withAuth = Component => {
     const Auth = (props) => {
         // Login data added to props via redux-store (or use react context for example)
-        const { user } = props;
+        const { auth } = props;
         // If user is not logged in, return login component
-        if (!user) {
+        if (!auth) {
             return (
-                <Login/>
+                <Welcome/>
             );
         }
         // If user is logged in, return original component

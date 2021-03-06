@@ -1,14 +1,11 @@
-import { Link, React, PropTypes } from 'libraries'
-import { Paper, AppBar, Hidden, Toolbar, Typography, CardHeader, Avatar, IconButton } from '@material-ui/core';
+import { React } from 'libraries'
+import { Paper, AppBar, Toolbar, Typography, CardHeader } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
-import { MoreVertIcon } from 'icons';
-import TextField from '@material-ui/core/TextField';
-import Tooltip from '@material-ui/core/Tooltip';
-import SearchIcon from '@material-ui/icons/Search';
-import RefreshIcon from '@material-ui/icons/Refresh';
 import { makeStyles } from "@material-ui/core/styles";
-
 import dynamic from 'next/dynamic'
+
+import { IsOnline } from "./IsOnline";
+
 
 
 const GoogleChart = dynamic(
@@ -16,14 +13,11 @@ const GoogleChart = dynamic(
     { loading: () => <p>...</p> }
 )
 
-
 export default function Index(props) {
     const { auth } = props;
     const classes = useStyles();
     return (<main>
-
         <Grid container direction="row" spacing={2}>
-            
             <Grid item xs={12} sm={12} md={3} lg={3}>
                 <Paper className={classes.paper}>
                     <AppBar className={classes.searchBar} position="static" color="default" elevation={0}>
@@ -45,7 +39,7 @@ export default function Index(props) {
                         </Toolbar>
                     </AppBar>
                     <div className={classes.contentWrapper}>
-                        <Typography color="textSecondary" align="center"> {JSON.stringify(auth)} </Typography>
+                        <Typography color="textSecondary" align="center"> {JSON.stringify(auth.googleId)} </Typography>
                     </div>
                 </Paper>
             </Grid>
@@ -65,7 +59,7 @@ export default function Index(props) {
                 </Grid>
             </Grid>
 
-           
+
         </Grid>
 
         <br />
@@ -77,7 +71,6 @@ export default function Index(props) {
                             <Typography> Demografi Politik </Typography>
                         </Toolbar>
                     </AppBar>
-                    <Typography> Pilkada 2022 </Typography>
                     <div className={classes.contentWrapper}>
                         <Typography color="textSecondary" align="center"> No users for this project yet </Typography>
                     </div>
@@ -91,7 +84,6 @@ export default function Index(props) {
                             <Typography> Demografi Politik </Typography>
                         </Toolbar>
                     </AppBar>
-                    <Typography> Pilkada 2022 </Typography>
                     <div className={classes.contentWrapper}>
                         <Typography color="textSecondary" align="center"> No users for this project yet </Typography>
                     </div>
@@ -145,6 +137,9 @@ export default function Index(props) {
                 </Paper>
             </Grid>
         </Grid>
+
+        <IsOnline />
+
     </main>)
 }
 
